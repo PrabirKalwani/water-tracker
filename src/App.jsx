@@ -2,7 +2,7 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import { SignInButton, SignUpButton, UserButton, useAuth, useUser } from "@clerk/clerk-react";
 
 const TODAY = new Date().toISOString().slice(0, 10);
-const API = "http://localhost:3001/api/water";
+const API = import.meta.env.PROD ? "/api/water" : (import.meta.env.VITE_API_URL || "http://localhost:3001") + "/api/water";
 
 function getDateISO(offset = 0) {
   const d = new Date(); d.setDate(d.getDate() - offset);
@@ -341,7 +341,7 @@ function SignInScreen() {
         Track your daily water intake. Sign in to save your progress.
       </p>
       <div style={{ display: "flex", gap: 12 }}>
-        <SignInButton mode="modal">
+        <SignInButton forceRedirectUrl={window.location.origin}>
           <button
             style={{ ...styles.clerkBtn, ...styles.clerkBtnPrimary }}
             onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-1px)"; }}
@@ -350,7 +350,7 @@ function SignInScreen() {
             Sign In
           </button>
         </SignInButton>
-        <SignUpButton mode="modal">
+        <SignUpButton forceRedirectUrl={window.location.origin}>
           <button
             style={{ ...styles.clerkBtn, ...styles.clerkBtnOutline }}
             onMouseEnter={e => { e.currentTarget.style.background = "var(--bg-card)"; }}
