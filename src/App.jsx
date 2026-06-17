@@ -2,7 +2,7 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import { SignInButton, SignUpButton, UserButton, useAuth, useUser } from "@clerk/clerk-react";
 
 const TODAY = new Date().toISOString().slice(0, 10);
-const API_BASE = (import.meta.env.VITE_API_URL || "").replace(/\/$/, "");
+const API_BASE = (import.meta.env.VITE_API_URL || (import.meta.env.DEV ? "http://localhost:3001" : "")).replace(/\/$/, "");
 const API = `${API_BASE}/api/water`;
 
 function getDateISO(offset = 0) {
