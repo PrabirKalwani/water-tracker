@@ -1,6 +1,6 @@
 {
-  "name": "Hydro — Water Tracker",
-  "short_name": "Hydro",
+  "name": "Superhydro — Water Tracker",
+  "short_name": "Superhydro",
   "description": "Track your daily water intake with style.",
   "start_url": "/",
   "display": "standalone",
