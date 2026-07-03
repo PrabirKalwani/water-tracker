@@ -336,7 +336,7 @@ function SignInScreen() {
   return (
     <div style={styles.signInContainer}>
       <div style={{ fontSize: 48, marginBottom: 8 }}>💧</div>
-      <h1 style={{ ...styles.title, fontSize: 28 }}>Hydro</h1>
+      <h1 style={{ ...styles.title, fontSize: 28 }}>SuperHydro</h1>
       <p style={{ color: "var(--text-secondary)", fontSize: 14, lineHeight: 1.6 }}>
         Track your daily water intake. Sign in to save your progress.
       </p>
@@ -465,7 +465,7 @@ export default function App() {
 
       <div style={styles.header}>
         <div style={styles.logoMark}>💧</div>
-        <h1 style={styles.title}>Hydro</h1>
+        <h1 style={styles.title}>SuperHydro</h1>
       </div>
       <div style={{ textAlign: "center" }}>
         <span style={styles.dateChip}>{dateStr}</span>
